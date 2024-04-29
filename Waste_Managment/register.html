@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complaint Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url('waste_background.jpg');
+      background-size: cover;
+    }
+
+    .container {
+      max-width: 500px;
+      padding: 20px;
+        background-color: cornsilk;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      margin-top: 0;
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 8px;
+    }
+
+    input[type="text"],
+    textarea {
+      padding: 8px;
+      margin-bottom: 16px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      resize: vertical;
+    }
+
+    button {
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #message {
+      margin-top: 16px;
+      text-align: center;
+      display: none;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Submit a Complaint</h1>
+    <form id="complaintForm">
+      <label for="location">Location:</label>
+      <button type="button" onclick="getCurrentLocation()">Get Current Location</button>
+      <input type="text" id="location" name="location" readonly>
+
+      <label for="complaint">Complaint:</label>
+      <textarea id="complaint" name="complaint" rows="4" cols="50"></textarea>
+
+      <label for="image">Upload Image:</label>
+      <input type="file" id="image" name="image">
+
+      <button type="submit">Submit</button>
+    </form>
+    <div id="message"></div>
+  </div>
+
+  <script>
+    function getCurrentLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        alert("Geolocation is not supported by this browser.");
+      }
+    }
+
+    function showPosition(position) {
+      var locationField = document.getElementById("location");
+      locationField.value = position.coords.latitude + "," + position.coords.longitude;
+    }
+
+    document.getElementById("complaintForm").addEventListener("submit", function(event) {
+      event.preventDefault(); 
+
+      var complaint = document.getElementById("complaint").value;
+      var location = document.getElementById("location").value;
+
+  
+      var message = document.getElementById("message");
+
+      message.style.display = "block";
+      message.textContent = "Your complaint has been registered and our executives are working on it.";
+
+      const formData=new formData(event.target);
+        for(const[name,value] of formData) {
+            console.log('${name}: ${value}');
+        }
+
+      fetch('/api/complaints',{
+        method: 'POST',
+        body: formData
+      })
+    });
+  </script>
+</body>
+</html>

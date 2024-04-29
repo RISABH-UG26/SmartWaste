@@ -1,0 +1,376 @@
+*{
+    margin:0;
+    font-family: Arial;
+    border: border-box;
+    height: fit-content; 
+    width: fit-content;
+}
+body{
+    background-color: rgba(0, 0, 0, 1.7);
+    height: 100px;
+    width: 100%;
+    
+}
+.navbar{
+    height: 100px;
+    width: 1525px;
+    background-image: linear-gradient(black,);
+    color: whitesmoke;
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: right;
+    padding-top: 0.25rem ;
+    padding-bottom: 0.25rem;
+    
+}
+
+.navbars{
+
+    height: 1650px;
+    width: 1500px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: justify;
+    background-image: url('pic1.jpg');
+    background-size: cover;
+    box-shadow: 7px 6px 7px 2px rgba(0,0,0,0.5);
+    border-radius: 20px;
+    margin-right: 200px;
+    scale :.8; opacity: 0.8;
+    animation: fade-in linear;
+    animation-timeline: view();
+    animation-range: cover 100px;
+        
+      
+    
+}
+
+
+@keyframes fade-in {
+    from{ }
+    to {scale :1; opacity: 1; }
+}  
+header {
+    width: 1500px;
+}
+
+footer{
+    margin-top: 1px;
+    background-color: rgb(207, 247, 148);
+    height: 400px;
+    width: 1525px;
+    margin-bottom: 0px;
+    color: white;
+    display: block;
+    align-items: center;
+    font-size: 0.7rem;
+ 
+    
+ }
+ #myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: red; /* Set a background color */
+    color: rgb(129, 10, 10); /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  #myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+  }
+
+  
+.foot-panelone{
+    background-color: rgb(207, 247, 148);
+   height: 10px;
+}
+.foot-paneltwo{
+    background-color: rgba(0, 65, 109,0.73);
+    color: white;
+    margin-top: 2%;
+    height: 300px;
+    width: 1520px;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius:50px;
+
+    
+}
+ul {
+    margin-top: 25px;
+}
+ul a{
+    display: block;
+    margin-top: 2px;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    color: #dddddd;
+}
+
+.foot-panelfour{
+text-align: center;
+margin-left: 500px;
+}
+
+
+
+
+
+
+/* //////////////////////////////////////////////// */
+
+.add_fir{
+    display: block;
+    
+    margin-bottom: 1800px;
+    margin-top: 0px;
+    text-align: justify;
+    
+    margin-left: 600px;
+    font-size: 80px;
+    
+    font-family: "MuseoModerno", sans-serif;
+    font-optical-sizing: auto;
+    
+    
+  
+    color: #ffffffd3;
+    text-decoration: underline rgb(45, 44, 45);
+}
+
+.add-ico{
+    display: block;
+    
+    align-items: justify;
+    text-align: right;
+    margin-right: 100px;
+}
+
+
+.cube-section {
+   height: 600px;
+   width: 1525px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    background-image: url('waste_background.jpg');
+    background-size: cover;
+    
+    }
+    .boxes1{
+        height: 200px;
+        width: 500px;
+    }
+    .boxes2{
+        height: 200px;
+        width: 500px;
+    }
+    .boxes3{
+        height: 200px;
+        width: 500px;
+    }
+  
+
+    .boxes1:hover {
+        border:  solid rgb(27, 36, 223);
+        border-radius:15px;
+        box-shadow: 0px 8px 30px;
+        transition: all 300ms ease-in-out;
+    }
+    .boxes2:hover {
+        border: 1px solid rgb(100, 253, 29);
+        border-radius:15px;
+        box-shadow: 0px 8px 30px;
+        transition: all 300ms ease-in-out;
+    }
+    .boxes3:hover {
+        border: 1px solid rgb(229, 14, 17);
+        border-radius:15px;
+        box-shadow: 0px 8px 30px;
+        transition: all 300ms ease-in-out;
+    }
+    .box-imag{
+    height:180px;
+    width: 500px;
+    background-size: cover;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: whitesmoke;
+    margin-top: 4rem;
+    scale :.8; opacity: 0.7;
+    animation:fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: cover 250px;
+            
+           
+    box-shadow: 0 3px 3px rgba(0,0,0,1);
+    padding: left 1em;
+    margin-top: var(--bs-gutter-y);
+    box-sizing: border-box;
+    }
+    .back-imag{
+        animation: fade-in linear;
+        animation-timeline: view(100px);
+    } 
+    @keyframes fade-in {
+        from{ }
+        to {scale :1; opacity: 10; }
+    }   
+    a {
+        text-decoration: none;
+        color: rgb(37, 146, 223);
+        font-size: 14px;
+    }
+
+    .boxes4{
+
+        height: 550px;
+        width: 1520px;
+        
+        display: flex;
+        
+            
+            align-items: center;
+            text-align: center;
+            
+            justify-content: justify;
+        background-image: url('pic1.jpg');
+        background-size: cover;
+        box-shadow: 7px 6px 7px 2px rgba(0,0,0,0.5);
+        border-radius: 20px;
+         opacity: 0.9;
+        
+        animation: image-animation linear forwards;
+        animation-timeline: view();
+        animation-range: start;       
+        font-size: 16px;
+                 
+    }
+    
+    @keyframes fade-out {
+        from{ }
+        to { opacity: 0.5; }
+    }
+
+    .add_thi{
+        
+            display: block;
+            
+            
+            margin-top: 5px;
+            text-align: center;
+            
+            margin-left: 600px;
+            font-size: 35px;
+            font-style: italic ;
+            font-style: bold ;
+            color: #e44c60;
+            
+        }
+        .add_fiv{
+        
+            display: block;
+            
+            
+            margin-top: 0px;
+            text-align: center;
+            margin-left: 200px;
+            margin-right: 200px;
+            
+            font-size: 28px;
+            font-style: italic ;
+            font-style: bold ;
+            color: #fffffd;
+            
+        }
+        .boxes5{
+
+            height: 750px;
+            width: 1450px;
+            
+            display: flex;
+            
+                
+                align-items: center;
+                text-align: center;
+                
+                justify-content: justify;
+            background-image: url('be-sustainable.png');
+            background-size: cover;
+            box-shadow: 7px 6px 7px 2px rgba(0,0,0,0.5);
+            border-radius: 20px;
+            scale :.8; opacity: 0.5;
+            animation: fade-in linear;
+            animation-timeline: view();
+            animation-range: cover 300px;
+            font-size: 16px;
+                
+              
+            
+        }
+        .boxes6{
+
+            height: 850px;
+            width: 1450px;
+            
+            display: flex;
+            
+                
+                align-items: center;
+                text-align: center;
+                
+                justify-content: justify;
+            background-image: url('reduce_waste.png');
+            background-size: cover;
+            box-shadow: 7px 6px 7px 2px rgba(0,0,0,0.5);
+            border-radius: 20px;
+            scale :.8; opacity: 0;
+            animation: fade-in linear;
+            animation-timeline: view();
+            animation-range: cover 300px;
+            font-size: 16px;
+                
+              
+            
+        }
+        .boxes7{
+
+            height: 1150px;
+            width: 1500px;
+            
+            display: flex;
+            
+                
+                align-items: center;
+                text-align: center;
+                
+                justify-content: justify;
+            background-image: url('re_use.png');
+            background-size: cover;
+            box-shadow: 7px 6px 7px 2px rgba(0,0,0,0.5);
+            border-radius: 20px;
+            scale :.8; opacity: 0;
+            animation: fade-in linear;
+            animation-timeline: view();
+            animation-range: cover 300px;
+            font-size: 16px;
+                
+              
+            
+        }
+        
+        
+        
+    

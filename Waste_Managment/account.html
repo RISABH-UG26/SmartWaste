@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login/Sign Up Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-image: url(pic1.jpg);
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      margin-right: 80px; /* Increase right side margin */
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input {
+      width: 90%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .switch-form {
+      text-align: center;
+    }
+
+    .switch-form a {
+      color: #007bff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-header">
+      <h2 id="form-title">Login</h2>
+    </div>
+    <form id="form">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Your Password" required>
+      </div>
+      <button type="submit" class="btn" id="submitBtn">Login</button>
+    </form>
+    <div class="switch-form">
+      <p>Don't have an account? <a href="#" id="switchLink">Sign Up</a></p>
+    </div>
+    </div>
+
+  <script>
+    const formTitle = document.getElementById('form-title');
+    const form = document.getElementById('form');
+    const submitBtn = document.getElementById('submitBtn');
+    const switchLink = document.getElementById('switchLink');
+
+    let isLogin = true;
+
+    switchLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      isLogin = !isLogin;
+
+      if (isLogin) {
+        formTitle.textContent = 'Login';
+        submitBtn.textContent = 'Login';
+      } else {
+        formTitle.textContent = 'Sign Up';
+        submitBtn.textContent = 'Sign Up';
+      }
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+
+      const endpoint = isLogin ? '/api/login' : '/api/signup';
+
+      fetch(endpoint, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        if (!isLogin) {
+          alert('Account created successfully');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        // Show error message
+      });
+    });
+  </script>
+</body>
+</html>
